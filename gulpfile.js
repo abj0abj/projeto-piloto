@@ -1,7 +1,7 @@
-var gulp = require('gulp'),
-	sass = require('gulp-ruby-sass'),
-	uglify = require('gulp-uglify'),
-	plumber = require('gulp-plumber');
+var gulp = require('gulp');
+var sass = require('gulp-ruby-sass');
+var	uglify = require('gulp-uglify');
+var	plumber = require('gulp-plumber');
 
 //styles
 gulp.task('styles',function(){
@@ -20,8 +20,8 @@ gulp.task('scripts',function(){
 
 //watch
 gulp.task('watch',function(){
-	gulp.src('assets/scss/*.scss',['styles']);
-	gulp.src('assets/js/*.js',['scripts']);
+	gulp.watch('assets/scss/*.scss',['styles']);
+	gulp.watch('assets/js/*.js',['scripts']);
 });
 
 gulp.task('default', ['styles','scripts','watch']);
